@@ -1,0 +1,11 @@
+{
+	"name": "Aikido",
+	"version": "1.0.0",
+	"description": "The Aikido MCP Server brings Aikido's security scanning capabilities directly into your AI coding workflow.",
+	"author": {
+		"name": "Aikido",
+		"email": "support@aikido.dev"
+	},
+	"logo": "assets/aikido-logo.svg",
+	"keywords": ["aikido", "mcp", "security", "sast", "secrets"]
+}
