@@ -6,7 +6,7 @@ A lightweight Model Context Protocol (MCP) server that exposes Aikido’s Code a
 
 ### API Key Setup
 
-The MCP server requires an Aikido API key to authenticate with the Aikido API. First, [generate your key](https://app.aikido.dev/settings/integrations/ide/cursor). Then you can provide it to the MCP server in two ways:
+The MCP server requires an Aikido API key to authenticate with the Aikido API. Start by [generating your key](https://app.aikido.dev/settings/integrations/ide/cursor). Then provide it to the MCP server using one of the following methods:
 
 1. **Via MCP Configuration (Recommended)**: Set the `AIKIDO_API_KEY` environment variable in your MCP configuration file
 2. **Via System Environment Variable**: Set `AIKIDO_API_KEY` as a system environment variable
