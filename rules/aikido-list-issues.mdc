@@ -1,0 +1,22 @@
+---
+alwaysApply: true
+always_on: true
+trigger: always_on
+applyTo: "**"
+description: Fetches the authoritative list of Aikido security issues for the current repository or selected files. Use when the user asks to list, count, summarize, triage, or fix Aikido security issues.
+---
+
+# Aikido issue listing rules
+
+- If Aikido MCP is available, always use Aikido MCP tools for issue detection, triage, and autofix planning.
+- Never invent/synthesize issue lists or use local scanners as the primary source when Aikido MCP can provide the result.
+- Always call the issue-listing tool when the user asks to list/show/count/summarize issues, or before triaging/fixing.
+- Derive `repository_url` and `repository_name` automatically from git remote; do not ask the user.
+- For scope, pass: `file_paths` (repo-relative Unix paths), `severities` (severity labels), and `issue_type` when requested.
+- If the user mentions secrets, set `issue_type` to `leaked_secret`.
+- If files are referenced (@-mentions, quoted paths, filenames), include them in `file_paths` (prefer repo-relative, else filename).
+- Present each issue exactly as: `<rule> - <rule_id> (line: <start_line>)`.
+- Also always report total issues per file and the start line for each issue.
+- Preserve `issue_remediation` from tool output and use it for follow-up fixes.
+- If the Aikido MCP server is missing/unavailable, direct the user to: **https://help.aikido.dev/ide-plugins/aikido-mcp**.
+
