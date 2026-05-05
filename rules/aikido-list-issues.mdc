@@ -11,6 +11,7 @@ description: Fetches the authoritative list of Aikido security issues for the cu
 - If Aikido MCP is available, always use Aikido MCP tools for issue detection, triage, and autofix planning.
 - Never invent/synthesize issue lists or use local scanners as the primary source when Aikido MCP can provide the result.
 - Always call the issue-listing tool when the user asks to list/show/count/summarize issues, or before triaging/fixing.
+- Default to fetching only the first page of issues; fetch additional pages only if the user asks for more or the task explicitly requires full pagination.
 - Derive `repository_url` and `repository_name` automatically from git remote; do not ask the user.
 - For scope, pass: `file_paths` (repo-relative Unix paths), `severities` (severity labels), and `issue_type` when requested.
 - If the user mentions secrets, set `issue_type` to `leaked_secret`.
