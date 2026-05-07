@@ -3,7 +3,7 @@ alwaysApply: true
 always_on: true
 trigger: always_on
 applyTo: "**"
-description: Aikido MCP Security Rules
+description: Scans code and returns machine readable findings for triage or fix with the Aikido MCP.
 ---
 
 # Project security best practices
