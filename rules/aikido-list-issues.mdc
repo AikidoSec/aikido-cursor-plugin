@@ -3,21 +3,25 @@ alwaysApply: true
 always_on: true
 trigger: always_on
 applyTo: "**"
-description: Fetches the authoritative list of Aikido security issues for the current repository or selected files. Use when the user asks to list, count, summarize, triage, or fix Aikido security issues.
+description: Fetches Aikido security issues from the Aikido feed via MCP. Use when the user asks to list, show, count, or summarize feed issues, scopes by cloud/repo/vm/domain/container, or before triaging or fixing against the current issue set.
 ---
 
 # Aikido issue listing rules
 
-- If Aikido MCP is available, always use Aikido MCP tools for issue detection, triage, and autofix planning.
-- Never invent/synthesize issue lists or use local scanners as the primary source when Aikido MCP can provide the result.
-- Always call the issue-listing tool when the user asks to list/show/count/summarize issues, or before triaging/fixing.
-- Default to fetching only the first page of issues; fetch additional pages only if the user asks for more or the task explicitly requires full pagination.
-- Derive `repository_url` and `repository_name` automatically from git remote; do not ask the user.
-- For scope, pass: `file_paths` (repo-relative Unix paths), `severities` (severity labels), and `issue_type` when requested.
-- If the user mentions secrets, set `issue_type` to `leaked_secret`.
-- If files are referenced (@-mentions, quoted paths, filenames), include them in `file_paths` (prefer repo-relative, else filename).
-- Present each issue exactly as: `<rule> - <rule_id> (line: <start_line>)`.
-- Also always report total issues per file and the start line for each issue.
-- Preserve `issue_remediation` from tool output and use it for follow-up fixes.
-- If the Aikido MCP server is missing/unavailable, direct the user to: **https://help.aikido.dev/ide-plugins/aikido-mcp**.
+- Call **aikido_issues_list** when the user asks to list, show, count, or summarize Aikido security issues from the feed, or before you triage or fix and need the current issue set.
+- Default to the first page of results (`page` **0** or omit per server default); request additional pages only if the user asks for more.
+- **Scope** the request when the user names them, by passing any of: `cloud_name`, `repo_name`, `vm_name`, `domain_name`, `container_name` (only include parameters that apply).
+- **Filter** with `issue_types` when useful or when the user asks by category; if they mention secrets, include **`leaked_secret`** in `issue_types`.
+- Preserve **`issue_remediation`** (and any other remediation fields) from tool output and use them for follow-up fixes.
+- Present each issue using this shape (fill values from the tool response; map the feed’s title or primary label field to the first line):
 
+```
+Issue #1: <issue_title>
+ - Issue type: <issue_type>
+ - Severity: <issue_severity>
+ - Remediation: <issue_remediation>
+```
+
+- Always report how many issues are in the returned page (and overall totals only if the tool provides them).
+- If the **Aikido MCP server** is missing or unavailable, tell the user to install or start it using the official guide at:  
+  **https://help.aikido.dev/ide-plugins/aikido-mcp**.
