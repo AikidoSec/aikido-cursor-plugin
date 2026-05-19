@@ -4,7 +4,7 @@
         "command": "npx",
         "args": ["-y", "@aikidosec/mcp"],
         "env": {
-          "AIKIDO_API_KEY": "your-api-key-here"
+          "AIKIDO_API_KEY": "${env:AIKIDO_API_KEY}"
         }
       }
     }
