@@ -1,7 +1,7 @@
 {
 	"name": "Aikido",
-	"version": "1.0.0",
-	"description": "The Aikido MCP Server brings Aikido's security scanning capabilities directly into your AI coding workflow.",
+	"version": "1.0.1",
+	"description": "The Aikido MCP Server brings Aikido's security scanning capabilities and issue retrieval directly into your AI coding workflow.",
 	"author": {
 		"name": "Aikido",
 		"email": "support@aikido.dev"

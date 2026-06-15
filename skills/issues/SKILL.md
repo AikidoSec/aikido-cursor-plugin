@@ -17,3 +17,8 @@ When listing Aikido feed issues:
     - Severity: <issue_severity>
     - Remediation: <issue_remediation>
    ```
+
+If the Aikido MCP server is not available or fails, inform the user:
+
+> The Aikido MCP server is required for Aikido feed issues but is not available.
+> Run `/aikido:setup` to configure it.

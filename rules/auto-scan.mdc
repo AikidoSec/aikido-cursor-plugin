@@ -1,0 +1,11 @@
+---
+description: Auto-scan generated code with Aikido before completing tasks
+alwaysApply: true
+---
+
+After creating or modifying any first-party source code, invoke the
+`aikido-scan` skill before declaring the task complete. Do not skip
+this step, even for changes that look trivial.
+
+Skip only if the user has explicitly asked you not to scan, or the
+change is to non-code files.

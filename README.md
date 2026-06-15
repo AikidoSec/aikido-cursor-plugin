@@ -6,12 +6,9 @@ In combination with the [Aikido Cursor IDE Plugin](https://help.aikido.dev/ide-p
 
 ## Configuration
 
-### API Key Setup
+### Sign in
 
-The MCP server requires an Aikido API key to authenticate with the Aikido API. Start by [generating your key](https://app.aikido.dev/settings/integrations/ide/cursor). Then provide it to the MCP server using one of the following methods:
-
-1. **Via MCP Configuration (Recommended)**: Set the `AIKIDO_API_KEY` environment variable in your MCP configuration file
-2. **Via System Environment Variable**: Set `AIKIDO_API_KEY` as a system environment variable
+The MCP server authenticates via a browser-based sign-in flow — no API key required. Run the `/aikido:setup` skill (or call the `aikido_login` MCP tool) and follow the region-specific sign-in URL it returns. The server caches your token locally for future sessions; re-run setup with `force_reauth` to switch accounts.
 
 ## Documentation
 
