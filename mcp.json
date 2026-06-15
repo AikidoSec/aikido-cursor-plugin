@@ -2,10 +2,7 @@
     "mcpServers": {
       "aikido": {
         "command": "npx",
-        "args": ["-y", "@aikidosec/mcp"],
-        "env": {
-          "AIKIDO_API_KEY": "${env:AIKIDO_API_KEY}"
-        }
+        "args": ["-y", "@aikidosec/mcp@1.0.10"]
       }
     }
   }
