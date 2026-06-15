@@ -21,4 +21,4 @@ When listing Aikido feed issues:
 If the Aikido MCP server is not available or fails, inform the user:
 
 > The Aikido MCP server is required for Aikido feed issues but is not available.
-> Run `/aikido:setup <your-api-key>` to configure it.
+> Run `/aikido:setup` to configure it.

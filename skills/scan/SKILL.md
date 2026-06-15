@@ -18,4 +18,4 @@ When scanning the code for security vulnerabilities using the Aikido MCP server:
 If the Aikido MCP server is not available or fails to start, inform the user:
 
 > The Aikido MCP server is required for security scanning but is not available.
-> Run `/aikido:setup <your-api-key>` to configure it.
+> Run `/aikido:setup` to configure it.
