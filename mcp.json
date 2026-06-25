@@ -2,7 +2,7 @@
     "mcpServers": {
       "aikido": {
         "command": "npx",
-        "args": ["-y", "@aikidosec/mcp@1.0.10"]
+        "args": ["-y", "@aikidosec/mcp@1.0.12"]
       }
     }
   }
